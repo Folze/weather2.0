@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="./reset.css">
+    <script src="./script.js" type="module" defer></script>
+    <script src="./localStorage.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-Panel">
+            <form action="#" class="weather-search-form">
+                <input type="text" placeholder="City" autocomplete="off" class="input-city">
+                <button class="weather-search-form-btn"></button>
+            </form>
+        </div>
+        <div class="weather">
+            <div class="Left-Container">
+                <div class="City">
+                    <h1 class="weather-city">City</h1>
+                    <img src="./assets/heart.svg" class="heart">
+                </div>
+
+                <div class="weather-block-temperature">
+                    <p class="Temperature"></p>
+                    <img src="./assets/cloud.svg" alt="cloud" class="weather-block-cloud">
+                </div>
+                <div class="Additional-Information">
+                    <li>
+                        Feels Like:<h4 class="feels-like"></h4>
+                    </li>
+
+                    <li>
+                        Sunrise:<h4 class="sunrise"></h4>
+                    </li>
+                    <li>
+                        Sunset:<h4 class="sunset"></h4>
+                    </li>
+                    <div></div>
+                </div>
+                <div class="Weather-Forecast">
+                    <div class="Weather-Forecast-block">
+                        <h3>12:00</h3>
+                        <ul>
+                            <li>Temperature</li>
+                            <li>Feels Like</li>
+                        </ul>
+                        <div></div>
+                    </div>
+                    <div class="Weather-Forecast-block">
+                        <h3>15:00</h3>
+                        <ul>
+                            <li>Temperature</li>
+                            <li>Feels Like</li>
+                        </ul>
+                        <div></div>
+                    </div>
+                    <div class="Weather-Forecast-block">
+                        <h3>18:00</h3>
+                        <ul>
+                            <li>Temperature</li>
+                            <li>Feels Like</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="Right-Container">
+                <div class="Added-Locations">
+                    <h1>Added Locations:</h1>
+                </div>
+                <div class="City-List">
+                    <ul>
+                        <li>Amur</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
