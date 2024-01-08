@@ -141,7 +141,15 @@ body {
 
 .City-List li {
   list-style-type: none;
-  margin: 10px 10px 0px 10px;
+  margin: 10px 10px 10px 10px;
+}
+.item-li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.118);
 }
 
 .weather-block-temperature {
@@ -154,13 +162,6 @@ body {
   margin-top: 20px;
 }
 
-.item-li {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  background-color: rgba(128, 128, 128, 0.118);
-}
-
 .buttonDelete {
   /* padding: 8px; */
   width: 20px;
@@ -170,7 +171,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: rgba(173, 23, 23, 0.123);
   margin-right: 20px;
   border: 0px;
+}
+.favoriteCities {
+  color: black;
+  font-size: 40px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.favoriteCities:hover {
+  color: blue;
 }

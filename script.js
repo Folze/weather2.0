@@ -51,44 +51,56 @@ UI_ELEMENTS.searchForm.addEventListener('submit', (event) => {
     showWeather(cityName);
 });
 
+const city = UI_ELEMENTS.currentCity.textContent;
+let cities = JSON.parse(localStorage.getItem('cities')) || [];
+let storageArr = new Set(JSON.parse(localStorage.getItem("storage"))) || []
+function addToStorage(city) {
+    storageArr.add({
+        city
+    })
+}
+localStorage.setItem('cities', JSON.stringify(cities))
+
+
 
 UI_ELEMENTS.heart.addEventListener('click', (event) => {
     event.preventDefault();
     const city = UI_ELEMENTS.currentCity.textContent;
-    const cities = JSON.parse(localStorage.getItem('cities')) || [];
-    cities.push(city);
+    if (!Array.isArray(cities)) {
+        cities = [];
+    }
+    if (!cities.includes(city)) {
+        cities.push(city);
+    }
 
-    if (cities.length >= 12) {
+    if (cities.length >= 10) {
         alert("Слишком много")
-        renderCities()
     } else {
         localStorage.setItem('cities', JSON.stringify(cities));
-        renderCities();
+        renderCities()
     }
 })
 
+UI_ELEMENTS.favoriteCities.addEventListener('click', (event) => {
+    event.preventDefault()
+    renderCities()
+})
+
+
 function renderCities() {
     UI_ELEMENTS.cityList.innerHTML = '';
-    const cities = JSON.parse(localStorage.getItem('cities')) || [];
 
     cities.forEach((city) => {
         // Создаем
         const newFavCity = document.createElement('li')
-        const deleteFavCity = document.createElement('button');
+        const btnDeleteFavCity = document.createElement('button');
         // Присваиваем класс
         newFavCity.classList.add("item-li");
-        deleteFavCity.classList.add("buttonDelete");
+        btnDeleteFavCity.classList.add("buttonDelete");
 
         newFavCity.textContent = city;
         UI_ELEMENTS.cityList.appendChild(newFavCity);
-        newFavCity.appendChild(deleteFavCity);
-
-
-        console.log(city)
-
-        newFavCity.addEventListener("click", () => {
-            showWeather(city)
-        })
+        newFavCity.appendChild(btnDeleteFavCity);
 
         // функция удаления из массива
         function deleteCity(city) {
@@ -99,7 +111,7 @@ function renderCities() {
             }
         }
         // Удалить из избранного
-        deleteFavCity.addEventListener("click", function () {
+        btnDeleteFavCity.addEventListener("click", function () {
             UI_ELEMENTS.cityList.removeChild(newFavCity);
             const selectedCity = city
             deleteCity(selectedCity);
@@ -108,17 +120,6 @@ function renderCities() {
 }
 
 
-deleteElement(selectedElement);
-// deleteFavCity.addEventListener("click", function removeCity() {
-//     UI_ELEMENTS.cityList.removeChild(newFavCity);
-//     localStorage.setItem("cities", JSON.stringify(cities))
-// });
-// });
-// }
-// function deleteCity(city) {
-//     const index = cities.indexOf(city);
-//     if (index > -1) {
-//         cities.splice(index, 1);
-//         localStorage.setItem('cities', JSON.stringify(cities));
-//     }
-// }
+
+
+

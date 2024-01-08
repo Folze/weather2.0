@@ -11,6 +11,7 @@ const UI_ELEMENTS = {
     heart: getElement('.heart'),
     cityList: getElement('.City-List'),
     currentCity: getElement('.weather-city'),
+    favoriteCities: getElement('.favoriteCities'),
 }
 
 export { UI_ELEMENTS }
