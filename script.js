@@ -37,22 +37,22 @@ async function showWeather(cityName) {
 
 
 
-
 UI_ELEMENTS.searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const cityName = UI_ELEMENTS.inputCity.value;
     showWeather(cityName);
 });
 
+
 const city = UI_ELEMENTS.currentCity.textContent;
 let cities = JSON.parse(localStorage.getItem('cities')) || [];
-
 
 
 
 UI_ELEMENTS.heart.addEventListener('click', (event) => {
     event.preventDefault();
     const city = UI_ELEMENTS.currentCity.textContent;
+
     if (!Array.isArray(cities)) {
         cities = [];
     }
@@ -60,7 +60,7 @@ UI_ELEMENTS.heart.addEventListener('click', (event) => {
         cities.push(city);
     }
 
-    if (cities.length >= 12) {
+    if (cities.length >= 13) {
         alert("Слишком много")
     } else {
         localStorage.setItem('cities', JSON.stringify(cities));
@@ -89,6 +89,12 @@ function renderCities() {
         UI_ELEMENTS.cityList.appendChild(newFavCity);
         newFavCity.appendChild(btnDeleteFavCity);
 
+        // Города
+        newFavCity.addEventListener('click', (event) => {
+            event.preventDefault()
+            showWeather(city)
+        })
+
         // функция удаления из массива
         function deleteCity(city) {
             const index = cities.indexOf(city);
@@ -105,8 +111,3 @@ function renderCities() {
         });
     });
 }
-
-
-
-
-
