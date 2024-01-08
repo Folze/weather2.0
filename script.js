@@ -30,13 +30,6 @@ async function showWeather(cityName) {
         UI_ELEMENTS.currentCity.textContent = json.name;
         UI_ELEMENTS.currentIcon.setAttribute('src', iconUrl);
 
-
-        // fetch(`${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`)
-        //     .then(function (resp) { return resp.json() })
-        //     .then(function (data) {
-        //         console.log(data)
-        //     })
-
     } catch (err) {
         throw new Error(alert(err));
     }
@@ -67,7 +60,7 @@ UI_ELEMENTS.heart.addEventListener('click', (event) => {
         cities.push(city);
     }
 
-    if (cities.length >= 10) {
+    if (cities.length >= 12) {
         alert("Слишком много")
     } else {
         localStorage.setItem('cities', JSON.stringify(cities));
