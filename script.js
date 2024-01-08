@@ -53,13 +53,7 @@ UI_ELEMENTS.searchForm.addEventListener('submit', (event) => {
 
 const city = UI_ELEMENTS.currentCity.textContent;
 let cities = JSON.parse(localStorage.getItem('cities')) || [];
-let storageArr = new Set(JSON.parse(localStorage.getItem("storage"))) || []
-function addToStorage(city) {
-    storageArr.add({
-        city
-    })
-}
-localStorage.setItem('cities', JSON.stringify(cities))
+
 
 
 
