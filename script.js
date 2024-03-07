@@ -11,7 +11,7 @@ async function showWeather(cityName) {
         let response = await fetch(url);
         let json = await response.json();
 
-
+        console.log(json)
         const icon = json.weather[0].icon
         const iconUrl = `https://openweathermap.org/img/wn/${icon}@4x.png`;
 
@@ -68,32 +68,43 @@ UI_ELEMENTS.heart.addEventListener('click', (event) => {
     }
 })
 
+
 UI_ELEMENTS.favoriteCities.addEventListener('click', (event) => {
     event.preventDefault()
     renderCities()
+    showWeather(cityName.textContent)
 })
-
 
 function renderCities() {
     UI_ELEMENTS.cityList.innerHTML = '';
 
     cities.forEach((city) => {
         // Создаем
-        const newFavCity = document.createElement('li')
+        const newFavCity = document.createElement('div')
+        const favCityId = document.createElement('a')
+        const cityName = document.createElement('li')
         const btnDeleteFavCity = document.createElement('button');
         // Присваиваем класс
-        newFavCity.classList.add("item-li");
+        newFavCity.classList.add("new-favorite-city");
+        favCityId.classList.add("favorite-city-id")
+        cityName.classList.add("item-li");
         btnDeleteFavCity.classList.add("buttonDelete");
 
-        newFavCity.textContent = city;
-        UI_ELEMENTS.cityList.appendChild(newFavCity);
-        newFavCity.appendChild(btnDeleteFavCity);
+        // favCityId.textContent = i
+        cityName.textContent = city;
+
+        UI_ELEMENTS.cityList.appendChild(newFavCity).appendChild(cityName).prepend(favCityId)
+        cityName.appendChild(btnDeleteFavCity)
+
 
         // Города
-        newFavCity.addEventListener('click', (event) => {
+        cityName.addEventListener('click', (event) => {
             event.preventDefault()
             showWeather(city)
         })
+
+
+
 
         // функция удаления из массива
         function deleteCity(city) {
@@ -105,7 +116,7 @@ function renderCities() {
         }
         // Удалить из избранного
         btnDeleteFavCity.addEventListener("click", function () {
-            UI_ELEMENTS.cityList.removeChild(newFavCity);
+            UI_ELEMENTS.cityList.removeChild(cityName);
             const selectedCity = city
             deleteCity(selectedCity);
         });

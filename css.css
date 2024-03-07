@@ -57,8 +57,11 @@ header {
 
 .weather {
   display: flex;
+  justify-content: space-between;
   border: 1px solid black;
   border-top: 0px solid;
+  width: 1200px;
+  height: 920px;
 }
 
 .weather-search-form {
@@ -84,7 +87,7 @@ header {
 .Left-Container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px;
 }
 
 .Temperature {
@@ -121,6 +124,7 @@ header {
 }
 
 .Right-Container {
+  width: 500px;
   display: flex;
   flex-direction: column;
   border-left: 1px solid black;
@@ -135,26 +139,14 @@ header {
 }
 
 .City-List {
+  display: flex;
+  flex-direction: column;
   font-size: 24px;
 }
 
 .City-List li {
   list-style-type: none;
   margin: 10px 10px 10px 10px;
-}
-.item-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
-  cursor: pointer;
-  transition: color 0.4s;
-  border-radius: 7px;
-  background-color: rgba(128, 128, 128, 0.118);
-}
-
-.item-li:hover {
-  color: blue;
 }
 
 .weather-block-temperature {
@@ -164,25 +156,6 @@ header {
 .weather-block-cloud {
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.buttonDelete {
-  margin-left: 20px;
-  padding: 20px;
-  height: 50px;
-  cursor: pointer;
-  background-image: url("assets/deleteButton.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-right: 20px;
-  border: none;
-  border-radius: 40%;
-  background-color: #f2f2f2;
-  transition: background-color 0.3s;
-}
-.buttonDelete:hover {
-  background-color: #ff7f77;
 }
 
 .favoriteCities {
@@ -207,4 +180,50 @@ header {
   font-size: 30px;
   padding: 25px;
   font-weight: normal;
+}
+
+/* Favorite */
+.new-favorite-city {
+  display: flex;
+}
+
+.favorite-city-id {
+  margin-right: 10px;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.item-li {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: color 0.4s;
+  border-radius: 7px;
+  background-color: rgba(128, 128, 128, 0.118);
+}
+
+.item-li:hover {
+  color: blue;
+}
+
+.buttonDelete {
+  margin-left: 20px;
+  padding: 20px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url("assets/deleteButton.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 20px;
+  border: none;
+  border-radius: 40%;
+  background-color: #f2f2f2;
+  transition: background-color 0.3s;
+}
+.buttonDelete:hover {
+  background-color: #ff7f77;
 }
