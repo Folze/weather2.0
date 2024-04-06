@@ -6,8 +6,9 @@ async function showWeather(cityName) {
 
         // Api
         const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
-        const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
+        const apiKey = 'eed21df466d9691fdef055d585c190c7';
         const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
+
         let response = await fetch(url);
         let json = await response.json();
 
@@ -18,8 +19,10 @@ async function showWeather(cityName) {
         // Восход,Заход
         const sunset = new Date(json.sys.sunset * 1000)
         const sunrise = new Date(json.sys.sunrise * 1000)
-        UI_ELEMENTS.sunset.textContent = sunset.getHours() + ":" + sunset.getMinutes()
-        UI_ELEMENTS.sunrise.textContent = sunrise.getHours() + ":" + sunrise.getMinutes()
+
+        UI_ELEMENTS.sunset.textContent = `${sunset.getHours()}:${sunset.getMinutes() < 10 ? '0' + sunset.getMinutes() : sunset.getMinutes()}`;
+        UI_ELEMENTS.sunrise.textContent = `${sunrise.getHours()}:${sunrise.getMinutes() < 10 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()}`;
+
 
         // Temp
         const temperature = Math.round(json.main.temp);

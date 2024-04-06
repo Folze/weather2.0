@@ -15,3 +15,8 @@ const UI_ELEMENTS = {
 }
 
 export { UI_ELEMENTS }
+
+
+const serverUrlForecast = 'https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid'
+const apiKeyForecast ='eed21df466d9691fdef055d585c190c7'
+const urlForecast = `${serverUrlForecast}=${apiKeyForecast}`
