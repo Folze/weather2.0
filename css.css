@@ -23,6 +23,15 @@ header {
   position: relative;
 }
 
+.weather {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-top: 0px solid;
+  width: 1200px;
+  height: 920px;
+}
+
 .weather-city {
   font-size: 40px;
   text-decoration: underline;
@@ -55,15 +64,6 @@ header {
   fill: red;
 }
 
-.weather {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  border-top: 0px solid;
-  width: 1200px;
-  height: 920px;
-}
-
 .weather-search-form {
   display: flex;
   flex-direction: column;
@@ -90,6 +90,11 @@ header {
   padding: 40px;
 }
 
+.Main-Information {
+  margin-bottom: 50px;
+  
+}
+
 .Temperature {
   font-size: 70px;
 }
@@ -112,7 +117,6 @@ header {
 .Weather-Forecast {
   display: flex;
   flex-direction: column;
-  width: 265px;
 }
 
 .Weather-Forecast li {
