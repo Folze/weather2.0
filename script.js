@@ -48,13 +48,16 @@ async function showWeather(cityName) {
         UI_ELEMENTS.temp.textContent = temperature + '°';
         UI_ELEMENTS.feelsLike.textContent = feelsLike + '°';
 
+
+// Получение текущей даты
 const currentDate = new Date()
 const year = currentDate.getFullYear()
-const month = currentDate.getMonth()+1
-const day = currentDate.getDate()
-console.log(`"${year}:${month}:${day}"`)
+const month = `${currentDate.getMonth() + 1 < 10 ? '0' + (currentDate.getMonth() + 1) : currentDate.getMonth() + 1}`;
+const day = `${currentDate.getDate() < 10 ? '0' + currentDate.getDate() : currentDate.getDate()}`
 
-console.log(currentDate)
+const timeTwelve = (`${year}-${month}-${day} 12:00:00`)
+const timeFifteen = (`${year}-${month}-${day} 15:00:00`)
+const timeEighteen = (`${year}-${month}-${day} 18:00:00`)
 
 
     } catch (error) {
@@ -62,8 +65,6 @@ console.log(currentDate)
      console.error(error);
         }
     }
-
-
 
 UI_ELEMENTS.searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -73,7 +74,7 @@ UI_ELEMENTS.searchForm.addEventListener('submit', (event) => {
 });
 
 
-const city = UI_ELEMENTS.currentCity.textContent;
+// const city = UI_ELEMENTS.currentCity.textContent;
 let cities = JSON.parse(localStorage.getItem('cities')) || [];
 
 
