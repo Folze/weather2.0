@@ -10,6 +10,11 @@ async function showWeather(cityName) {
     const response = await fetch(url);
     const jsonData = await response.json();
     
+    if (jsonData.cod === '404') {
+        alert('Город не найден');
+        return;
+    }
+
     console.log(jsonData) // check che prihodit
     
     // City Name
@@ -43,11 +48,15 @@ async function showWeather(cityName) {
         UI_ELEMENTS.temp.textContent = temperature + '°';
         UI_ELEMENTS.feelsLike.textContent = feelsLike + '°';
 
-        
-        if (jsonData.cod === '404') {
-            alert('Город не найден');
-            return;
-        }
+const currentDate = new Date()
+const year = currentDate.getFullYear()
+const month = currentDate.getMonth()+1
+const day = currentDate.getDate()
+console.log(`"${year}:${month}:${day}"`)
+
+console.log(currentDate)
+
+
     } catch (error) {
       alert('Ошибка при получении погоды');
      console.error(error);
@@ -136,9 +145,9 @@ function renderCities() {
         }
         // Удалить из избранного
         btnDeleteFavCity.addEventListener("click", function () {
-            UI_ELEMENTS.cityList.removeChild(cityName);
-            const selectedCity = city
+            const selectedCity = cityName.textContent
             deleteCity(selectedCity);
+            UI_ELEMENTS.cityList.removeChild(newFavCity);
         });
     });
 }
