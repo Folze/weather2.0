@@ -55,9 +55,32 @@ const year = currentDate.getFullYear()
 const month = `${currentDate.getMonth() + 1 < 10 ? '0' + (currentDate.getMonth() + 1) : currentDate.getMonth() + 1}`;
 const day = `${currentDate.getDate() < 10 ? '0' + currentDate.getDate() : currentDate.getDate()}`
 
-const timeTwelve = (`${year}-${month}-${day} 12:00:00`)
-const timeFifteen = (`${year}-${month}-${day} 15:00:00`)
-const timeEighteen = (`${year}-${month}-${day} 18:00:00`)
+
+const timeTwelve =`${year}-${month}-${day} 12:00:00`
+const timeFifteen =`${year}-${month}-${day} 15:00:00`
+const timeEighteen = `${year}-${month}-${day} 18:00:00`
+
+
+const zzz =forecastData.find(item=>item.dt_txt === timeTwelve)
+console.log(zzz)
+const tempTimeTwelve = Math.round(zzz.main.temp)
+UI_ELEMENTS.timeTwelve.textContent = tempTimeTwelve + '°';
+UI_ELEMENTS.feelsLikeTwelve.textContent = feelsLike + '°';
+
+
+const zzz1 =forecastData.find(item=>item.dt_txt === timeFifteen)
+const tempTimeFive = Math.round(zzz1.main.temp)
+UI_ELEMENTS.timeFifteen.textContent = tempTimeFive + '°';
+UI_ELEMENTS.feelsLikeFifteen.textContent = feelsLike + '°';
+
+
+
+const zzz2 =forecastData.find(item=>item.dt_txt === timeEighteen)
+const tempTimeEight = Math.round(zzz2.main.temp)
+UI_ELEMENTS.timeEighteen.textContent = tempTimeEight + '°';
+UI_ELEMENTS.feelsLikeEighteen.textContent = feelsLike + '°';
+
+
 
 
     } catch (error) {

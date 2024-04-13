@@ -3,6 +3,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: rgba(14, 12, 12, 0.076);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -121,10 +122,15 @@ header {
 
 .Weather-Forecast li {
   list-style-type: none;
+  display: flex;
 }
 
 .Weather-Forecast h3 {
   border-top: 1px solid black;
+}
+
+.Weather-Forecast h4 {
+  margin-left: 5px;
 }
 
 .Right-Container {
@@ -172,7 +178,7 @@ header {
   font-style: italic;
   transition: color 0.3s;
   text-decoration: none;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   transition: background-color 0.3s;
 }
 .favoriteCities:hover {

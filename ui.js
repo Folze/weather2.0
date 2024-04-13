@@ -11,7 +11,13 @@ const UI_ELEMENTS = {
     heart: getElement('.heart'),
     cityList: getElement('.City-List'),
     currentCity: getElement('.weather-city'),
-    favoriteCities: getElement('.favoriteCities'),
+    favoriteCities: getElement('.favoriteCities'), 
+    timeTwelve: getElement('.timeTwelve'),
+    timeFifteen: getElement('.timeFifteen'),
+    timeEighteen: getElement('.timeEighteen'),
+    feelsLikeTwelve: getElement('.feels-like-timeTwelve'),
+    feelsLikeFifteen: getElement('.feels-like-timeFifteen'),
+    feelsLikeEighteen: getElement('.feels-like-timeEighteen'),
 }
 
 export { UI_ELEMENTS }
