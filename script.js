@@ -62,23 +62,23 @@ const timeFifteen =`${year}-${month}-${day} 15:00:00`
 const timeEighteen = `${year}-${month}-${day} 18:00:00`
 
 
-const zzz =forecastData.find(item=>item.dt_txt === timeTwelve)
-console.log(zzz)
-const tempTimeTwelve = Math.round(zzz.main.temp)
+const dataTimeTwelve =forecastData.find(item=>item.dt_txt === timeTwelve)
+console.log(dataTimeTwelve)
+const tempTimeTwelve = Math.round(dataTimeTwelve.main.temp)
 TEMPERATURE.timeTwelve.textContent = tempTimeTwelve + '°';
 TEMPERATURE.feelsLikeTwelve.textContent = feelsLike + '°';
 
 
-const zzz1 =forecastData.find(item=>item.dt_txt === timeFifteen)
-const tempTimeFive = Math.round(zzz1.main.temp)
-TEMPERATURE.timeFifteen.textContent = tempTimeFive + '°';
+const dataTimeFifteen =forecastData.find(item=>item.dt_txt === timeFifteen)
+const tempTimeFifteen = Math.round(dataTimeFifteen.main.temp)
+TEMPERATURE.timeFifteen.textContent = tempTimeFifteen + '°';
 TEMPERATURE.feelsLikeFifteen.textContent = feelsLike + '°';
 
 
 
-const zzz2 =forecastData.find(item=>item.dt_txt === timeEighteen)
-const tempTimeEight = Math.round(zzz2.main.temp)
-TEMPERATURE.timeEighteen.textContent = tempTimeEight + '°';
+const dataTimeEighteen=forecastData.find(item=>item.dt_txt === timeEighteen)
+const tempTimeEighteen = Math.round(dataTimeEighteen.main.temp)
+TEMPERATURE.timeEighteen.textContent = tempTimeEighteen + '°';
 TEMPERATURE.feelsLikeEighteen.textContent = feelsLike + '°';
 
 
