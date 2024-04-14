@@ -1,4 +1,5 @@
 import { UI_ELEMENTS } from "./ui.js";
+import { TEMPERATURE } from "./temperature.js";
 
 const API_KEY = 'eed21df466d9691fdef055d585c190c7';
 
@@ -64,21 +65,21 @@ const timeEighteen = `${year}-${month}-${day} 18:00:00`
 const zzz =forecastData.find(item=>item.dt_txt === timeTwelve)
 console.log(zzz)
 const tempTimeTwelve = Math.round(zzz.main.temp)
-UI_ELEMENTS.timeTwelve.textContent = tempTimeTwelve + '°';
-UI_ELEMENTS.feelsLikeTwelve.textContent = feelsLike + '°';
+TEMPERATURE.timeTwelve.textContent = tempTimeTwelve + '°';
+TEMPERATURE.feelsLikeTwelve.textContent = feelsLike + '°';
 
 
 const zzz1 =forecastData.find(item=>item.dt_txt === timeFifteen)
 const tempTimeFive = Math.round(zzz1.main.temp)
-UI_ELEMENTS.timeFifteen.textContent = tempTimeFive + '°';
-UI_ELEMENTS.feelsLikeFifteen.textContent = feelsLike + '°';
+TEMPERATURE.timeFifteen.textContent = tempTimeFive + '°';
+TEMPERATURE.feelsLikeFifteen.textContent = feelsLike + '°';
 
 
 
 const zzz2 =forecastData.find(item=>item.dt_txt === timeEighteen)
 const tempTimeEight = Math.round(zzz2.main.temp)
-UI_ELEMENTS.timeEighteen.textContent = tempTimeEight + '°';
-UI_ELEMENTS.feelsLikeEighteen.textContent = feelsLike + '°';
+TEMPERATURE.timeEighteen.textContent = tempTimeEight + '°';
+TEMPERATURE.feelsLikeEighteen.textContent = feelsLike + '°';
 
 
 

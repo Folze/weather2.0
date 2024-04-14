@@ -123,6 +123,7 @@ header {
 .Weather-Forecast li {
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
 .Weather-Forecast h3 {
