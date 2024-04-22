@@ -61,25 +61,25 @@ const timeTwelve =`${year}-${month}-${day} 12:00:00`
 const timeFifteen =`${year}-${month}-${day} 15:00:00`
 const timeEighteen = `${year}-${month}-${day} 18:00:00`
 
-// //12 часов
-// const dataTimeTwelve = forecastData.find(item=>item.dt_txt === timeTwelve)
-// console.log(dataTimeTwelve)
-// const tempTimeTwelve = Math.round(dataTimeTwelve.main.temp)
-// const feelsLikeTwelve = Math.round(dataTimeTwelve.main.feels_like)
-// TEMPERATURE.timeTwelve.textContent = tempTimeTwelve + '°';
-// TEMPERATURE.feelsLikeTwelve.textContent = feelsLikeTwelve + '°';
-// // 15 часов
-// const dataTimeFifteen =forecastData.find(item=>item.dt_txt === timeFifteen)
-// const tempTimeFifteen = Math.round(dataTimeFifteen.main.temp)
-// const feelsLikeFifteen= Math.round(dataTimeFifteen.main.feels_like)
-// TEMPERATURE.timeFifteen.textContent = tempTimeFifteen + '°';
-// TEMPERATURE.feelsLikeFifteen.textContent = feelsLikeFifteen + '°';
-// // 18 часов
-// const dataTimeEighteen=forecastData.find(item=>item.dt_txt === timeEighteen)
-// const tempTimeEighteen = Math.round(dataTimeEighteen.main.temp)
-// const feelsLikeEighteen = Math.round(dataTimeEighteen.main.feels_like)
-// TEMPERATURE.timeEighteen.textContent = tempTimeEighteen + '°';
-// TEMPERATURE.feelsLikeEighteen.textContent = feelsLikeEighteen + '°';
+//12 часов
+const dataTimeTwelve = forecastData.find(item=>item.dt_txt === timeTwelve)
+console.log(dataTimeTwelve)
+const tempTimeTwelve = Math.round(dataTimeTwelve.main.temp)
+const feelsLikeTwelve = Math.round(dataTimeTwelve.main.feels_like)
+TEMPERATURE.timeTwelve.textContent = tempTimeTwelve + '°';
+TEMPERATURE.feelsLikeTwelve.textContent = feelsLikeTwelve + '°';
+// 15 часов
+const dataTimeFifteen =forecastData.find(item=>item.dt_txt === timeFifteen)
+const tempTimeFifteen = Math.round(dataTimeFifteen.main.temp)
+const feelsLikeFifteen= Math.round(dataTimeFifteen.main.feels_like)
+TEMPERATURE.timeFifteen.textContent = tempTimeFifteen + '°';
+TEMPERATURE.feelsLikeFifteen.textContent = feelsLikeFifteen + '°';
+// 18 часов
+const dataTimeEighteen=forecastData.find(item=>item.dt_txt === timeEighteen)
+const tempTimeEighteen = Math.round(dataTimeEighteen.main.temp)
+const feelsLikeEighteen = Math.round(dataTimeEighteen.main.feels_like)
+TEMPERATURE.timeEighteen.textContent = tempTimeEighteen + '°';
+TEMPERATURE.feelsLikeEighteen.textContent = feelsLikeEighteen + '°';
 
     } catch (error) {
       alert('Ошибка при получении погоды');
