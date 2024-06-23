@@ -3,7 +3,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(14, 12, 12, 0.076);
+  background-color: rgba(146, 202, 247, 0.42);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -31,6 +31,7 @@ header {
   border-top: 0px solid;
   width: 1200px;
   height: 920px;
+  background-color: #f7f7f7;
 }
 
 .weather-city {
@@ -93,7 +94,6 @@ header {
 
 .Main-Information {
   margin-bottom: 30px;
-  
 }
 
 .Temperature {
