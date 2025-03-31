@@ -8,7 +8,14 @@ async function showWeather(cityName) {
     const serverUrl = "http://api.openweathermap.org/data/2.5/forecast";
     const url = `${serverUrl}?q=${cityName}&appid=${API_KEY}&units=metric`;
 
-    const response = await fetch(url);
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject("Ошибка: Сервер долго отвечает"), 5000)
+    );
+
+    const response = await Promise.race([fetch(url), timeout]);
+
+    if (!response.ok) throw new Error("Ошибка запроса");
+
     const jsonData = await response.json();
 
     if (jsonData.cod === "404") {
@@ -171,6 +178,7 @@ function renderCities() {
     cityName.addEventListener("click", (event) => {
       event.preventDefault();
       showWeather(city);
+      console.log("lol");
     });
 
     // Удалить из избранного
